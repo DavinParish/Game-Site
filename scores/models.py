@@ -10,6 +10,8 @@ class Game(models.Model):
     description = models.TextField()
     download = models.FileField()
 
+    def __str__(self):
+        return self.name
 
 class Score(models.Model):
     score = models.CharField(max_length=200)
@@ -19,9 +21,15 @@ class Score(models.Model):
     ended_at = models.DateTimeField('Ended at: ')
     system_info = models.TextField(max_length=500)
 
+    def __str__(self):
+        return "{}, {}, {}".format(self.game, self.user, self.score)
+
 
 class Screenshot(models.Model):
 
     image = models.ImageField()
     caption = models.TextField()
     game = models.ForeignKey(Game)
+
+    def __str__(self):
+        return "{}, {}, {}".format(self.game, self.caption)
