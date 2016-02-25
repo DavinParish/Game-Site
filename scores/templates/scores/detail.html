@@ -1,0 +1,34 @@
+{% extends 'scores/base.html' %}
+
+{% block content %}
+    <div class="body">
+    <!-- show screenshots -->
+
+    {% for screenshot in screenshots %}
+        <h1>screenshot.caption</h1>
+        <img src = {{ screenshot.image.url }} />
+    {% endfor %}
+
+    <!-- show description -->
+    <p class="description">{{ game.description }}</p>
+    <!-- show download file -->
+
+    <!-- show highscore table -->
+    <table class="scoreTable">
+        <thead class="tableHead">
+            <tr>
+                <th class="cells">User</th>
+                <th class="cells">Score</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for score in scores %}
+                <tr>
+                    <td class="cells">{{ score.user.username }}</td><td class="cells">{{ score.score }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
