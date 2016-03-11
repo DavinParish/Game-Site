@@ -1,78 +1,9 @@
-
-
-/*#header{*/
-
-	/*display: flex;*/
-	/*align-items:flex-start;*/
-	/*margin-top: -10px;*/
-
-	/*width: 100%;*/
-	/*height: 125px;*/
-	/*border-top: 2px solid silver;*/
-	/*border-top-right-radius: 20%;*/
-	/*border-top-left-radius: 20%;*/
-	/*border-bottom: 1px solid silver;*/
-
-/*}*/
-
-/*#heading{*/
-
-	/*margin-left: 50%;*/
-
-	/*color: white;*/
-/*}*/
-
-/*.left{*/
-
-
-	/*position: fixed;*/
-
-	/*border-top-right-radius: 20%;*/
-	/*border-right: 2px solid green;*/
-	/*z-index: 1;*/
-	/*width: 15%;*/
-	/*height: 100%;*/
-	/*background-color: black;*/
-
-
-/*}*/
-
-/*.right{*/
-
-	/*display: flex;*/
-	/*justify-content: flex-end;*/
-	/*margin-left: 85%;*/
-	/*position: fixed;*/
-
-	/*width: 15%;*/
-	/*height: 100%;*/
-	/*z-index: 2;*/
-	/*border-top-left-radius: 20%;*/
-	/*border-left: 2px solid green;*/
-	/*background-color: black;*/
-
-/*}*/
-
-/*html{*/
-
-	/*background-color:black;*/
-
-/*}*/
-
-/*.body{*/
-	/*clear: both;*/
-/*}*/
-
-/*p{*/
-	/*color: white;*/
-/*}*/
-
 #header{
 
 	display: flex;
 	align-items:flex-start;
+	justify-content: center;
 	margin-top: -3px;
-
 	width: 100%;
 	height: 170px;
 	border-top: 2px solid silver;
@@ -84,16 +15,34 @@
 
 #heading{
 
-	margin-left: 50%;
+	color: whitesmoke;
+	font-size: 50px;
 
-	color: white;
+}
+
+.headerLink{
+	text-decoration: none;
+}
+
+.downloadSpace{
+	display: flex;
+	justify-content:center;
+	background-color: green;
+
+}
+
+.downloadLink{
+
+	text-decoration: none;
+	margin: auto;
+
 }
 
 body {
 	/*display: inline-flex;*/
 	width: 100%;
 	height: 100%;
-
+	background-color: black;
 	margin: 0;
 }
 
@@ -171,6 +120,7 @@ html{
 
 .scoreTable{
     margin:auto;
+
 
 
 }

@@ -50,8 +50,10 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ADMIN_MEDIA_PREFIX = '/media/'
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -120,14 +122,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = "C:/Users/davin/Documents/Workspace/mysite/mysite/static/scores"
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-]
+
+
+#
+# STATICFILES_FINDERS = [
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+# ]
 STATICFILES_DIRS = [
     "C:/Users/davin/Documents/Workspace/mysite/scores/static/scores"
 ]
 
 # media setup
-MEDIA_ROOT = 'C:/Users/Davin/documents/workspace/mysite/media'
-MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/media/'
+
+
+

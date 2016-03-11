@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, patterns
 from django.contrib import admin
 from django.conf.urls.static import static
+from django.template.context_processors import media
 
 from mysite import settings
 from scores import views
@@ -28,12 +29,15 @@ def game(args):
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^games/(\d+)/$', views.detail),
-    url(r'^$', views.base),
+    url(r'^$', views.base, name='game_base'),
     url(r'^(?P<game_id>[0-9]+)/detail/$', views.detail, name='game_detail'),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-if settings.DEBUG:
-    urlpatterns += patterns(
-        '',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-    )
+
+]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# urlpatterns += patterns('',
+#         (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+#         'document_root': settings.MEDIA_ROOT}))
+
