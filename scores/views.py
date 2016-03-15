@@ -11,13 +11,18 @@ def detail(request, game_id=None):
     game = Game.objects.get(id=game_id)
     scores = Score.objects.filter(game=game).order_by('-score')[:5]
     screenshots = Screenshot.objects.filter(game=game)
+    first_image = screenshots[0]
+    shots = screenshots[1:]
     random_image = random.choice(screenshots)
+
 
     context = {
         "screenshots": screenshots,
         "scores": scores,
         "game": game,
         "random": random_image,
+        "first_image": first_image,
+        "shots": shots,
     }
     return render(request, 'scores/detail.html', context)
 

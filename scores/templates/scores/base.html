@@ -6,6 +6,8 @@
 		<title>Game site base</title>
 
 		{% load staticfiles %}
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link type="text/css" rel="stylesheet" href="{% static 'stylesheet.css' %}"/>
@@ -19,7 +21,7 @@
 
 
 		<div class="group">
-			<div class = "left"></div>
+			<div class = "left-side-screen"></div>
 
 
             {% block content %}
@@ -29,8 +31,10 @@
                     <div class = "tile">
                         <ul class="itemWrap">
                             {% for game in games %}
-                                <li class="item">
-                                    <img class="img" src="{{ game.random_screenshot.image.url }}" />
+                                <li class="game-items">
+                                    <div class="pictures">
+                                        <img class="img" src="{{ game.random_screenshot.image.url }}" />
+                                    </div>
                                     <a href="{% url 'game_detail' game.id %}">{{ game.name }}</a>
                                 </li>
                             {% endfor %}
@@ -40,7 +44,7 @@
 
             {% endblock %}
 
-            <div class = "right"></div>
+            <div class = "right-side-screen"></div>
         </div>
 
 
@@ -48,3 +52,10 @@
 
 </html>
 
+
+
+{#<script src="http://code.jquery.com/jquery-1.9.1.js"></script>#}
+{#<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
+{#<script   src="https://code.jquery.com/jquery-2.2.1.js"   integrity="sha256-eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc="   crossorigin="anonymous"></script>#}
+{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>#}
+{#<script src="https://code.jquery.com/jquery-2.2.1.js" integrity="sha256-eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc=" crossorigin="anonymous"></script>#}
