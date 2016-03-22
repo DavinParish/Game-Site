@@ -3,49 +3,51 @@
 
 {% block content %}
     <div class="body">
-    <!-- show screenshots -->
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            {% for shot in shots %}
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            {% endfor %}
-{#            <li data-target="#carousel-example-generic" data-slide-to="2"></li>#}
-          </ol>
+        <!-- show screenshots -->
+        <div class="slides">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                {% for shot in shots %}
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                {% endfor %}
+            {#<li data-target="#carousel-example-generic" data-slide-to="2"></li>#}
+              </ol>
 
-          <!-- Wrapper for slides -->
+              <!-- Wrapper for slides -->
 
-          {#FIRST SLIDE (MUST BE INITIALLY ACTIVE) #}
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img class="carousel-image" src="{{first_image.image.url}}" >
-              <div class="carousel-caption">
-                <h3>{{ first_image.caption }}</h3>
-              </div>
-            </div>
-
-          {#ALL OTHER SLIDES#}
-          {% for shot in shots %}
-            <div class="item">
-                <img class="carousel-image" src="{{shot.image.url}}">
-                <div class="carousel-caption">
-                    <h3>{{ shot.caption }}</h3>
+              {#FIRST SLIDE (MUST BE INITIALLY ACTIVE) #}
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img class="carousel-image" src="{{first_image.image.url}}" >
+                  <div class="carousel-caption">
+                    <h3>{{ first_image.caption }}</h3>
+                  </div>
                 </div>
-            </div>
-          {% endfor %}
-            ...
-          </div>
 
-          <!-- Controls -->
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+              {#ALL OTHER SLIDES#}
+              {% for shot in shots %}
+                <div class="item">
+                    <img class="carousel-image" src="{{shot.image.url}}">
+                    <div class="carousel-caption">
+                        <h3>{{ shot.caption }}</h3>
+                    </div>
+                </div>
+              {% endfor %}
+                ...
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
         </div>
 
 

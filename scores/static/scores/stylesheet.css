@@ -88,6 +88,7 @@ html{
 
 .body{
     margin-top:35px;
+
 }
 
 .tile{
@@ -140,7 +141,8 @@ html{
 
 
 .description{
-
+	max-width:600px;
+	margin:auto;
 }
 
 .scoreTable{
@@ -186,6 +188,13 @@ html{
     color: #c0c0c0;
 }
 
+.slides{
+	max-width: 600px;
+	max-height:40px;
+	min-height: 400px;
+	margin:auto;
+}
+
 .item{
 	overflow: hidden;
 
@@ -196,19 +205,6 @@ html{
 	max-height:400px;
 	/*padding: 30px 10px 10px;*/
 }
-
-.item-active{
-	overflow: hidden;
-
-    /*min-width: 200px;*/
-    /*min-height:200px;*/
-
-    max-width:600px;
-    max-height:400px;
-	/*padding: 30px 10px 10px;*/
-
-}
-
 
 .carousel-image{
 	display: block;
@@ -221,7 +217,5 @@ html{
     max-height: 100%;
 }
 
-/*.carousel-inner > .item > img {*/
-    /*margin: 0 auto;*/
-/*}*/
+
 
